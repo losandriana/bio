@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
 import {
   Award,
@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
-// Navigation setup matching top bar links
 const navItems = [
   { id: "home", label: "Home" },
   { id: "about", label: "About Me" },
@@ -63,9 +62,9 @@ const technicalProjects = [
 ];
 
 const educationHistory = [
-  { title: "Ph.D. Candidate in Digital Systems", meta: "Apr 2026 - Present · University of Thessaly", body: "Focus: Edge Intelligence and Resilient Wireless Networking for Real-Time Autonomous and IoT Systems." },
-  { title: "M.Sc. Advanced Communication Systems & IoT", meta: "Oct 2024 - Mar 2026 · University of Thessaly", body: "Honors Graduate (9.71/10). Thesis on Neural Network-Assisted LLR Estimation and Adaptive Modulation." },
-  { title: "B.Sc. Digital Systems", meta: "Oct 2020 - Jul 2024 · University of Thessaly", body: "Graduated 7.74/10. Thesis: Design for Optimal Coverage in Low-Power LoRa Networks. WiMoTS Research Lab Member." }
+  { title: "Ph.D. Candidate in Digital Systems", meta: "Apr 2026 - Present · University of Thessaly", body: "Thesis Focus: Edge Intelligence and Resilient Wireless Networking for Real-Time Autonomous and IoT Systems." },
+  { title: "M.Sc. Advanced Communication Systems & IoT", meta: "Oct 2024 - March 2026 · University of Thessaly", body: "Graduated with Honors (9.71/10). Thesis on Neural Network-Assisted LLR Estimation and Adaptive Modulation." },
+  { title: "B.Sc. Digital Systems", meta: "Oct 2020 - July 2024 · University of Thessaly", body: "Graduated 7.74/10. Thesis: Design for Optimal Coverage in Low-Power LoRa Networks. WiMoTS Research Lab Member." }
 ];
 
 const skillsInventory = [
@@ -97,44 +96,11 @@ function handleScroll(id) {
   }
 }
 
-function TypingHeader() {
-  const titles = ["IoT Engineer", "Networks Researcher", "Robotics Specialist"];
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [reverse, setReverse] = useState(false);
-
-  useEffect(() => {
-    if (subIndex === titles[index].length + 1 && !reverse) {
-      const timeout = setTimeout(() => setReverse(true), 1200);
-      return () => clearTimeout(timeout);
-    }
-    if (subIndex === 0 && reverse) {
-      setReverse(false);
-      setIndex((prev) => (prev + 1) % titles.length);
-      return;
-    }
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, reverse ? 40 : 80);
-    return () => clearTimeout(timeout);
-  }, [subIndex, reverse, index]);
-
-  return (
-    <h2 className="typing-role">
-      {titles[index].substring(0, subIndex)}
-      <span className="cursor">|</span>
-    </h2>
-  );
-}
-
 function App() {
   return (
     <div className="portfolio-site">
-      {/* Top Navbar Header */}
+      {/* Top Navbar with Andriana logo removed */}
       <header className="top-navbar">
-        <button className="nav-brand" onClick={() => handleScroll("home")}>
-          Andriana<span>.</span>
-        </button>
         <nav className="header-nav-links">
           {navItems.map((item) => (
             <button key={item.id} onClick={() => handleScroll(item.id)}>
@@ -144,16 +110,16 @@ function App() {
         </nav>
       </header>
 
-      {/* Main Single Page Content Stream */}
       <main className="content-stream">
         
-        {/* Section 1: Hero Banner */}
+        {/* Section 1: Hero Block */}
         <section className="hero-section" id="home">
           <div className="hero-text-content">
-            <h3 className="salutation">Hello I'm</h3>
-            <TypingHeader />
-            <p className="hero-bio-snippet">
-              I am a Networks, IoT, and Robotics Systems Engineer currently specializing in edge intelligence configurations and resilient wireless computing frameworks.
+            <h1 className="static-name-heading">
+              Andriana<br />Christopoulou
+            </h1>
+            <p className="static-role-subline">
+              Networks Researcher <span>•</span> IoT Engineer <span>•</span> Robotics Specialist
             </p>
             <div className="hero-cta-row">
               <button className="cta-primary-btn" onClick={() => handleScroll("contact")}>
@@ -161,14 +127,8 @@ function App() {
               </button>
             </div>
             <div className="social-icon-circles">
-              <a href="https://github.com/losandriana" target="_blank" rel="noreferrer"><Github size={16} /></a>
-              <a href="mailto:andrianachristopoulou02@gmail.com"><Mail size={16} /></a>
-            </div>
-          </div>
-          <div className="hero-avatar-area">
-            {/* Replace this placeholder with your actual image path inside the public/ assets folder */}
-            <div className="avatar-frame">
-              <img src={`${import.meta.env.BASE_URL}assets/avatar.png`} alt="Andriana Christopoulou Profile Picture" onError={(e)=>{e.target.style.display='none'}} />
+              <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={16} /></a>
+              <a href="mailto:andrianachristopoulou02@gmail.com" aria-label="Email"><Mail size={16} /></a>
             </div>
           </div>
         </section>
@@ -177,7 +137,7 @@ function App() {
         <section className="about-section" id="about">
           <h2 className="section-title-line">About Me</h2>
           <p className="detailed-narrative">
-            As a Ph.D. Candidate at the University of Thessaly, my research lives at the intersection of **Edge Intelligence and Resilient Wireless Networking**. I build distributed containerized communication models that allow low-latency execution and real-time responsiveness for distributed autonomous applications.
+            As a Ph.D. Candidate at the University of Thessaly, my research focus addresses Edge Intelligence and Resilient Wireless Networking. I design scalable distributed containerized middleware communication engines to allow robust, low-latency execution and real-time responsiveness across autonomous IoT domains.
           </p>
           <div className="quick-specs-grid">
             <span><MapPin size={14} /> Lamia, Greece</span>
@@ -185,7 +145,6 @@ function App() {
             <span><Clock3 size={14} /> EEST / UTC+2</span>
           </div>
           <div className="cv-download-wrapper">
-            {/* 💡 Placing your resume file as "cv.pdf" inside your public directory makes this button fully functional */}
             <a href={`${import.meta.env.BASE_URL}cv.pdf`} download="CV_Christopoulou_Andriana.pdf" className="download-cv-btn">
               <Download size={14} /> Download CV
             </a>
@@ -269,7 +228,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 8: Certifications & Contact Summary */}
+        {/* Section 8: Certifications */}
         <section className="generic-section" id="certifications">
           <h2 className="section-title-line">Certifications</h2>
           <div className="flat-rows-list">
@@ -282,7 +241,7 @@ function App() {
           </div>
         </section>
 
-        {/* Contact Endpoint section */}
+        {/* Contact Footer */}
         <section className="generic-section contact-footer-block" id="contact">
           <h2 className="section-title-line">Contact</h2>
           <p>Let's discuss distributed infrastructures, systems automation, or research targets.</p>
