@@ -145,7 +145,7 @@ function App() {
             {/* Social Links Row Including Active Google Scholar & Docker Hub Mappings */}
             <div className="social-icon-circles">
               <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub"><Github size={16} /></a>
-              <a href="https://scholar.google.gr/citations?user=C200MOOAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={16} /></a>
+              <a href="https://scholar.google.gr/citations?user=C20oMOQAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={16} /></a>
               <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub"><Layers size={16} /></a>
               <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email"><Mail size={16} /></a>
             </div>
