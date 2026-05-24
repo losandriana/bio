@@ -115,7 +115,7 @@ function App() {
       {/* Left Sidebar Fixed Menu Container */}
       <aside className="left-sidebar-nav">
         <div className="sidebar-brand-mark">
-          Andriana Christopoulou<span>.</span>
+          Andriana Christopoulou
         </div>
         
         <nav className="sidebar-links-list">
@@ -157,52 +157,6 @@ function App() {
               <a href="https://scholar.google.gr/citations?user=C200MOOAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={16} /></a>
               <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub"><Layers size={16} /></a>
               <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email"><Mail size={16} /></a>
-            </div>
-
-            {/* Metric Skill Progress Assessment Box */}
-            <div className="core-skills-matrix-card">
-              <div className="matrix-card-header">
-                <Code2 size={14} className="accent-icon" />
-                <span>Top Architecture Skills</span>
-              </div>
-              <div className="matrix-rows-container">
-                <div className="matrix-skill-row">
-                  <span className="skill-name">Edge Computing & IoT</span>
-                  <div className="skill-progress-bar"><i style={{ width: "95%" }}></i></div>
-                  <span className="skill-tier">Expert</span>
-                </div>
-                <div className="matrix-skill-row">
-                  <span className="skill-name">Distributed Systems Middleware</span>
-                  <div className="skill-progress-bar"><i style={{ width: "90%" }}></i></div>
-                  <span className="skill-tier">Expert</span>
-                </div>
-                <div className="matrix-skill-row">
-                  <span className="skill-name">Robotics Engineering (ROS)</span>
-                  <div className="skill-progress-bar"><i style={{ width: "86%" }}></i></div>
-                  <span className="skill-tier">Advanced</span>
-                </div>
-                <div className="matrix-skill-row">
-                  <span className="skill-name">Wireless Communication Networks</span>
-                  <div className="skill-progress-bar"><i style={{ width: "82%" }}></i></div>
-                  <span className="skill-tier">Advanced</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Right Column Workspace Module */}
-          <div className="hero-right-column">
-            <div className="workspace-terminal-mockup">
-              <div className="terminal-header-strip">
-                <div className="terminal-bullets"><i/> <i/> <i/></div>
-                <span>andriana@edge-node: ~/research</span>
-              </div>
-              <div className="terminal-content-area">
-                <p className="terminal-command-line">~ init --focus</p>
-                <p className="terminal-text-output">
-                  Designing low-latency communication architectures and containerized frameworks for resilient, real-time edge environments.
-                </p>
-              </div>
             </div>
 
             <div className="horizontal-metadata-strip">
