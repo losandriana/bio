@@ -9,19 +9,20 @@ import {
   Clock3,
   Download,
   FileText,
-  Layers
+  Layers,
+  Code2
 } from "lucide-react";
 import "./styles.css";
 
 const navItems = [
-  { id: "home", label: "/home", icon: "🏠" },
-  { id: "about", label: "/about", icon: "👤" },
-  { id: "experience", label: "/experience", icon: "💼" },
-  { id: "projects", label: "/projects", icon: "📁" },
-  { id: "education", label: "/education", icon: "🎓" },
-  { id: "skills", label: "/skills", icon: "💻" },
-  { id: "publications", label: "/publications", icon: "📝" },
-  { id: "certifications", label: "/certifications", icon: "🎖️" }
+  { id: "home", label: "/home", icon: Home },
+  { id: "experience", label: "/experience", icon: BriefcaseBusiness },
+  { id: "projects", label: "/projects", icon: Folder },
+  { id: "education", label: "/education", icon: GraduationCap },
+  { id: "skills", label: "/skills", icon: Code2 },
+  { id: "publications", label: "/publications", icon: ScrollText },
+  { id: "certifications", label: "/certifications", icon: Award },
+  { id: "more", label: "/more", icon: Wrench }
 ];
 
 const experienceGroups = [
@@ -113,7 +114,7 @@ function App() {
       {/* Sidebar Navigation */}
       <aside className="left-sidebar-nav">
         <div className="sidebar-brand-mark">
-          DG<span>.</span>
+          AC<span>.</span>
         </div>
         
         <nav className="sidebar-links-list">
@@ -132,12 +133,12 @@ function App() {
         </div>
       </aside>
 
-      {/* Main Content Pane */}
+      {/* Main Content Stream */}
       <main className="content-stream">
         
-        {/* Home / Hero Section */}
+        {/* Dynamic Multi-Column Split Hero Layout */}
         <section className="hero-section" id="home">
-          <div className="hero-text-content">
+          <div className="hero-left-column">
             <h1 className="static-name-heading">
               Andriana<br />Christopoulou
             </h1>
@@ -156,17 +157,78 @@ function App() {
               <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub"><Layers size={16} /></a>
               <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email"><Mail size={16} /></a>
             </div>
+
+            {/* Injected Core Metrics Architecture Matrix Box */}
+            <div className="core-skills-matrix-card">
+              <div className="matrix-card-header">
+                <Code2 size={14} className="accent-icon" />
+                <span>Top Architecture Skills</span>
+              </div>
+              <div className="matrix-rows-container">
+                <div className="matrix-skill-row">
+                  <span className="skill-name">Edge Computing & IoT</span>
+                  <div className="skill-progress-bar"><i style={{ width: "95%" }}></i></div>
+                  <span className="skill-tier">Expert</span>
+                </div>
+                <div className="matrix-skill-row">
+                  <span className="skill-name">Distributed Systems Middleware</span>
+                  <div className="skill-progress-bar"><i style={{ width: "90%" }}></i></div>
+                  <span className="skill-tier">Expert</span>
+                </div>
+                <div className="matrix-skill-row">
+                  <span className="skill-name">Robotics Systems Engineering (ROS)</span>
+                  <div className="skill-progress-bar"><i style={{ width: "86%" }}></i></div>
+                  <span className="skill-tier">Advanced</span>
+                </div>
+                <div className="matrix-skill-row">
+                  <span className="skill-name">Wireless Communication Networks</span>
+                  <div className="skill-progress-bar"><i style={{ width: "82%" }}></i></div>
+                  <span className="skill-tier">Advanced</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side Info & Workspace Block Metadata Section */}
+          <div className="hero-right-column">
+            <div className="workspace-terminal-mockup">
+              <div className="terminal-header-strip">
+                <div className="terminal-bullets"><i/> <i/> <i/></div>
+                <span>andriana@edge-node: ~/research</span>
+              </div>
+              <div className="terminal-content-area">
+                <p className="terminal-command-line">~ init --focus</p>
+                <p className="terminal-text-output">
+                  Designing low-latency communication architectures and containerized frameworks for resilient, real-time edge environments.
+                </p>
+              </div>
+            </div>
+
+            <div className="horizontal-metadata-strip">
+              <div className="meta-item">
+                <MapPin size={13} />
+                <span>Lamia/Larissa, Greece</span>
+              </div>
+              <div className="meta-item">
+                <Globe2 size={13} />
+                <span>Available Worldwide</span>
+              </div>
+              <div className="meta-item">
+                <Clock3 size={13} />
+                <span>EEST / UTC+2</span>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* About Me Section */}
+        {/* Section 2: About Me */}
         <section className="about-section" id="about">
           <h2 className="section-title-line">About Me</h2>
           <p className="detailed-narrative">
-            As a Ph.D. Candidate at the University of Thessaly, my research focus addresses Edge Intelligence and Resilient Wireless Networking[cite: 24]. I design scalable distributed containerized middleware communication engines to allow robust, low-latency execution and real-time responsiveness across autonomous IoT domains[cite: 24].
+            As a Ph.D. Candidate at the University of Thessaly, my research focus addresses Edge Intelligence and Resilient Wireless Networking. I design scalable distributed containerized middleware communication engines to allow robust, low-latency execution and real-time responsiveness across autonomous IoT domains.
           </p>
           <div className="quick-specs-grid">
-            <span><MapPin size={14} /> Lamia/Larissa, Greece [cite: 3, 24]</span>
+            <span><MapPin size={14} /> Lamia/Larissa, Greece</span>
             <span><Mail size={14} /> <a href="mailto:anchristopoulou@uth.gr" className="inline-email-link">anchristopoulou@uth.gr</a></span>
             <span><Globe2 size={14} /> Available Worldwide</span>
             <span><Clock3 size={14} /> EEST / UTC+2</span>
@@ -177,7 +239,7 @@ function App() {
               <FileText size={18} className="banner-icon" />
               <div className="banner-text">
                 <span className="banner-title">CV</span>
-                <span className="banner-subtitle">Click to view or download full English CV</span>
+                <span className="banner-subtitle">Click to view or download full CV</span>
               </div>
             </div>
             <div className="banner-right">
@@ -186,7 +248,7 @@ function App() {
           </a>
         </section>
 
-        {/* Experience Section */}
+        {/* Section 3: Experience */}
         <section className="generic-section" id="experience">
           <h2 className="section-title-line">Experience</h2>
           <div className="editorial-stack">
@@ -203,7 +265,7 @@ function App() {
           </div>
         </section>
 
-        {/* Projects Section */}
+        {/* Section 4: Projects */}
         <section className="generic-section" id="projects">
           <h2 className="section-title-line">Projects</h2>
           <div className="cards-structural-grid">
@@ -220,7 +282,7 @@ function App() {
           </div>
         </section>
 
-        {/* Education Section */}
+        {/* Section 5: Education */}
         <section className="generic-section" id="education">
           <h2 className="section-title-line">Education</h2>
           <div className="editorial-stack">
@@ -237,7 +299,7 @@ function App() {
           </div>
         </section>
 
-        {/* Skills Section */}
+        {/* Section 6: Skills */}
         <section className="generic-section" id="skills">
           <h2 className="section-title-line">Skills</h2>
           <div className="skills-split-layout">
@@ -252,7 +314,7 @@ function App() {
           </div>
         </section>
 
-        {/* Publications Section */}
+        {/* Section 7: Publications */}
         <section className="generic-section" id="publications">
           <h2 className="section-title-line">Publications</h2>
           <div className="editorial-stack">
@@ -266,7 +328,7 @@ function App() {
           </div>
         </section>
 
-        {/* Certifications Section */}
+        {/* Section 8: Certifications */}
         <section className="generic-section" id="certifications">
           <h2 className="section-title-line">Certifications</h2>
           <div className="flat-rows-list">
@@ -279,13 +341,13 @@ function App() {
           </div>
         </section>
 
-        {/* Contact Section */}
+        {/* Contact Footer */}
         <section className="generic-section contact-footer-block" id="contact">
           <h2 className="section-title-line">Contact</h2>
           <p>Let's discuss distributed infrastructures, systems automation, or research targets.</p>
           <div className="footer-links-stack">
             <a href="mailto:anchristopoulou@uth.gr" className="footer-email-link">anchristopoulou@uth.gr</a>
-            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link subtle">andrianachristopoulou02@gmail.com [cite: 3]</a>
+            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link subtle">andrianachristopoulou02@gmail.com</a>
           </div>
         </section>
 
