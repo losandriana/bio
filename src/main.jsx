@@ -1,36 +1,29 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import {
-  Award,
-  BriefcaseBusiness,
-  Code2,
-  Folder,
-  GraduationCap,
+  Github,
   Mail,
   MapPin,
   ScrollText,
   Globe2,
   Clock3,
-  Wrench,
-  Github,
   Download,
   FileText,
-  Layers,
-  User
+  Layers
 } from "lucide-react";
 import "./styles.css";
 
-// Updated nav items structure matching the target path label orientation and emojis
 const navItems = [
-  { id: "home", label: "/home", icon: "🏠" },
-  { id: "about", label: "/about", icon: "👤" },
-  { id: "experience", label: "/experience", icon: "💼" },
-  { id: "projects", label: "/projects", icon: "📁" },
-  { id: "education", label: "/education", icon: "🎓" },
-  { id: "skills", label: "/skills", icon: "💻" },
-  { id: "publications", label: "/publications", icon: "📝" },
-  { id: "certifications", label: "/certifications", icon: "🎖️" }
+  { id: "home", label: "/home", icon: Home },
+  { id: "experience", label: "/experience", icon: BriefcaseBusiness },
+  { id: "projects", label: "/projects", icon: Folder },
+  { id: "education", label: "/education", icon: GraduationCap },
+  { id: "skills", label: "/skills", icon: Code2 },
+  { id: "publications", label: "/publications", icon: ScrollText },
+  { id: "certifications", label: "/certifications", icon: Award },
+  { id: "more", label: "/more", icon: Wrench }
 ];
+
 
 const experienceGroups = [
   {
@@ -99,8 +92,7 @@ const certificationsList = [
 function handleScroll(id) {
   const element = document.getElementById(id);
   if (element) {
-    // Offset adjusted since we no longer have a fixed horizontal topbar on desktop screens
-    const offset = window.innerWidth > 960 ? 30 : 70;
+    const offset = window.innerWidth > 960 ? 40 : 80;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -119,16 +111,16 @@ function App() {
   return (
     <div className="portfolio-site">
       
-      {/* Structural Left Sidebar Layout Integration */}
+      {/* Sidebar Navigation */}
       <aside className="left-sidebar-nav">
         <div className="sidebar-brand-mark">
-          AC<span>.</span>
+          DG<span>.</span>
         </div>
         
         <nav className="sidebar-links-list">
           {navItems.map((item) => (
             <button key={item.id} className="sidebar-nav-btn" onClick={() => handleScroll(item.id)}>
-              <span className="nav-emoji" aria-hidden="true">{item.icon}</span>
+              <span className="nav-emoji">{item.icon}</span>
               <span className="nav-label-text">{item.label}</span>
             </button>
           ))}
@@ -136,15 +128,15 @@ function App() {
         
         <div className="sidebar-footer-icons">
           <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub"><Github size={15} /></a>
-          <a href="https://scholar.google.gr/citations?user=C20oMOQAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={15} /></a>
+          <a href="https://scholar.google.gr/citations?user=C200MOOAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={15} /></a>
           <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub"><Layers size={15} /></a>
         </div>
       </aside>
 
-      {/* Primary content view shell */}
+      {/* Main Content Pane */}
       <main className="content-stream">
         
-        {/* Section 1: Hero Block */}
+        {/* Home / Hero Section */}
         <section className="hero-section" id="home">
           <div className="hero-text-content">
             <h1 className="static-name-heading">
@@ -161,21 +153,21 @@ function App() {
             
             <div className="social-icon-circles">
               <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub"><Github size={16} /></a>
-              <a href="https://scholar.google.gr/citations?user=C20oMOQAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={16} /></a>
+              <a href="https://scholar.google.gr/citations?user=C200MOOAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={16} /></a>
               <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub"><Layers size={16} /></a>
               <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email"><Mail size={16} /></a>
             </div>
           </div>
         </section>
 
-        {/* Section 2: About Me */}
+        {/* About Me Section */}
         <section className="about-section" id="about">
           <h2 className="section-title-line">About Me</h2>
           <p className="detailed-narrative">
-            As a Ph.D. Candidate at the University of Thessaly, my research focus addresses Edge Intelligence and Resilient Wireless Networking. I design scalable distributed containerized middleware communication engines to allow robust, low-latency execution and real-time responsiveness across autonomous IoT domains.
+            As a Ph.D. Candidate at the University of Thessaly, my research focus addresses Edge Intelligence and Resilient Wireless Networking[cite: 24]. I design scalable distributed containerized middleware communication engines to allow robust, low-latency execution and real-time responsiveness across autonomous IoT domains[cite: 24].
           </p>
           <div className="quick-specs-grid">
-            <span><MapPin size={14} /> Lamia/Larissa, Greece</span>
+            <span><MapPin size={14} /> Lamia/Larissa, Greece [cite: 3, 24]</span>
             <span><Mail size={14} /> <a href="mailto:anchristopoulou@uth.gr" className="inline-email-link">anchristopoulou@uth.gr</a></span>
             <span><Globe2 size={14} /> Available Worldwide</span>
             <span><Clock3 size={14} /> EEST / UTC+2</span>
@@ -186,7 +178,7 @@ function App() {
               <FileText size={18} className="banner-icon" />
               <div className="banner-text">
                 <span className="banner-title">CV</span>
-                <span className="banner-subtitle">Click to view or download full CV</span>
+                <span className="banner-subtitle">Click to view or download full English CV</span>
               </div>
             </div>
             <div className="banner-right">
@@ -195,7 +187,7 @@ function App() {
           </a>
         </section>
 
-        {/* Section 3: Experience */}
+        {/* Experience Section */}
         <section className="generic-section" id="experience">
           <h2 className="section-title-line">Experience</h2>
           <div className="editorial-stack">
@@ -212,7 +204,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 4: Projects */}
+        {/* Projects Section */}
         <section className="generic-section" id="projects">
           <h2 className="section-title-line">Projects</h2>
           <div className="cards-structural-grid">
@@ -229,7 +221,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 5: Education */}
+        {/* Education Section */}
         <section className="generic-section" id="education">
           <h2 className="section-title-line">Education</h2>
           <div className="editorial-stack">
@@ -246,7 +238,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 6: Skills */}
+        {/* Skills Section */}
         <section className="generic-section" id="skills">
           <h2 className="section-title-line">Skills</h2>
           <div className="skills-split-layout">
@@ -261,7 +253,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 7: Publications */}
+        {/* Publications Section */}
         <section className="generic-section" id="publications">
           <h2 className="section-title-line">Publications</h2>
           <div className="editorial-stack">
@@ -275,7 +267,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 8: Certifications */}
+        {/* Certifications Section */}
         <section className="generic-section" id="certifications">
           <h2 className="section-title-line">Certifications</h2>
           <div className="flat-rows-list">
@@ -288,13 +280,13 @@ function App() {
           </div>
         </section>
 
-        {/* Contact Footer */}
+        {/* Contact Section */}
         <section className="generic-section contact-footer-block" id="contact">
           <h2 className="section-title-line">Contact</h2>
           <p>Let's discuss distributed infrastructures, systems automation, or research targets.</p>
           <div className="footer-links-stack">
             <a href="mailto:anchristopoulou@uth.gr" className="footer-email-link">anchristopoulou@uth.gr</a>
-            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link">andrianachristopoulou02@gmail.com</a>
+            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link">andrianachristopoulou02@gmail.com [cite: 3]</a>
           </div>
         </section>
 
