@@ -32,7 +32,7 @@ const navItems = [
 
 const experienceGroups = [
   {
-    company: "University of Thessaly (Dept. of Computer Science & Telecommunications)",
+    company: "University of Thessaly (Dept. of Informatics & Telecommunications)",
     role: "Associate Researcher",
     date: "Apr 2025 - Present",
     details: "Analyzed technical requirements and designed architectures for distributed IoT systems and edge infrastructures. Developed interoperability mechanisms and integrated containerized services."
@@ -134,7 +134,7 @@ function App() {
               Andriana<br />Christopoulou
             </h1>
             <p className="static-role-subline">
-              Networks Researcher <span>•</span> IoT Engineer <span>•</span> Robotics Specialist
+              Networks & IoT Engineer <span>•</span> Robotics Specialist
             </p>
             <div className="hero-cta-row">
               <button className="cta-primary-btn" onClick={() => handleScroll("contact")}>
@@ -159,7 +159,7 @@ function App() {
             As a Ph.D. Candidate at the University of Thessaly, my research focus addresses Edge Intelligence and Resilient Wireless Networking. I design scalable distributed containerized middleware communication engines to allow robust, low-latency execution and real-time responsiveness across autonomous IoT domains.
           </p>
           <div className="quick-specs-grid">
-            <span><MapPin size={14} /> Lamia, Greece</span>
+            <span><MapPin size={14} /> Lamia/Larissa, Greece</span>
             <span><Mail size={14} /> <a href="mailto:anchristopoulou@uth.gr" className="inline-email-link">anchristopoulou@uth.gr</a></span>
             <span><Globe2 size={14} /> Available Worldwide</span>
             <span><Clock3 size={14} /> EEST / UTC+2</span>
