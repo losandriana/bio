@@ -32,13 +32,13 @@ const navItems = [
 const experienceGroups = [
   {
     company: "University of Thessaly (Dept. of Computer Science & Telecommunications) [cite: 8]",
-    role: "IT Researcher [cite: 7]",
+    role: "Associate Researcher [cite: 7]",
     date: "Apr 2025 - Present [cite: 8]",
     details: "Analyzed technical requirements and designed architectures for distributed IoT systems and edge infrastructures[cite: 9]. Integrated subsystems via containerized services[cite: 11]."
   },
   {
     company: "University of Thessaly (Dept. of Digital Systems) [cite: 16]",
-    role: "Part-time IT Professional [cite: 15]",
+    role: "Associate Researcher [cite: 15]",
     date: "Sep 2024 - Apr 2025 [cite: 16]",
     details: "Designed and developed smart IoT platforms using Docker, MQTT, LoRaWAN, FIWARE, and MongoDB/InfluxDB[cite: 18]. Installed and configured pilot implementations[cite: 21]."
   }
@@ -63,9 +63,12 @@ const technicalProjects = [
 ];
 
 const educationHistory = [
-  { title: "Ph.D. Candidate in Digital Systems [cite: 24]", meta: "Apr 2026 - Present · University of Thessaly [cite: 23, 24]", body: "Thesis Focus: Edge Intelligence and Resilient Wireless Networking for Real-Time Autonomous and IoT Systems[cite: 24]." },
-  { title: "M.Sc. Advanced Communication Systems & IoT [cite: 26]", meta: "Oct 2024 - March 2026 · University of Thessaly [cite: 25, 26]", body: "Graduated with Honors (9.71/10)[cite: 28]. Thesis on Neural Network-Assisted LLR Estimation and Adaptive Modulation[cite: 29]." },
-  { title: "B.Sc. Digital Systems [cite: 31]", meta: "Oct 2020 - July 2024 · University of Thessaly [cite: 30, 31]", body: "Graduated 7.74/10[cite: 33]. Thesis: Design for Optimal Coverage in Low-Power LoRa Networks[cite: 34]. WiMoTS Research Lab Member[cite: 35]." }
+  { title: "Ph.D. Candidate in Digital Systems [cite: 24]", meta: "Apr 2026 - Present · University of Thessaly [cite: 23, 24]", 
+   body: "Thesis Focus: Edge Intelligence and Resilient Wireless Networking for Real-Time Autonomous and IoT Systems[cite: 24]." },
+  { title: "M.Sc. Advanced Communication Systems & IoT [cite: 26]", meta: "Oct 2024 - March 2026 · University of Thessaly [cite: 25, 26]", 
+   body: "Graduated with Honors (9.71/10)[cite: 28]. Thesis on Neural Network-Assisted LLR Estimation and Adaptive Modulation[cite: 29]." },
+  { title: "B.Sc. Digital Systems [cite: 31]", meta: "Oct 2020 - July 2024 · University of Thessaly [cite: 30, 31]", 
+   body: "Graduated 7.74/10[cite: 33]. Thesis: Design for Optimal Coverage in Low-Power LoRa Networks[cite: 34]. WiMoTS Research Lab Member[cite: 35]." }
 ];
 
 const skillsInventory = [
@@ -153,7 +156,7 @@ function App() {
             As a Ph.D. Candidate at the University of Thessaly [cite: 24], my research focus addresses Edge Intelligence and Resilient Wireless Networking[cite: 24]. I design scalable distributed containerized middleware communication engines to allow robust, low-latency execution and real-time responsiveness across autonomous IoT domains.
           </p>
           <div className="quick-specs-grid">
-            <span><MapPin size={14} /> Lamia, Greece</span> {/* [cite: 3] */}
+            <span><MapPin size={14} /> Lamia/Larissa, Greece</span> {/* [cite: 3] */}
             <span><Mail size={14} /> <a href="mailto:anchristopoulou@uth.gr" className="inline-email-link">anchristopoulou@uth.gr</a></span>
             <span><Globe2 size={14} /> Available Worldwide</span>
             <span><Clock3 size={14} /> EEST / UTC+2</span>
