@@ -347,7 +347,7 @@ function App() {
           <p>Let's discuss distributed infrastructures, systems automation, or research targets.</p>
           <div className="footer-links-stack">
             <a href="mailto:anchristopoulou@uth.gr" className="footer-email-link">anchristopoulou@uth.gr</a>
-            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link subtle">andrianachristopoulou02@gmail.com</a>
+            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link">andrianachristopoulou02@gmail.com</a>
           </div>
         </section>
 
