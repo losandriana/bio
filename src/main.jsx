@@ -15,19 +15,21 @@ import {
   Github,
   Download,
   FileText,
-  Layers
+  Layers,
+  User
 } from "lucide-react";
 import "./styles.css";
 
+// Updated nav items structure matching the target path label orientation and emojis
 const navItems = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About Me" },
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "education", label: "Education" },
-  { id: "skills", label: "Skills" },
-  { id: "publications", label: "Publications" },
-  { id: "certifications", label: "Certifications" }
+  { id: "home", label: "/home", icon: "🏠" },
+  { id: "about", label: "/about", icon: "👤" },
+  { id: "experience", label: "/experience", icon: "💼" },
+  { id: "projects", label: "/projects", icon: "📁" },
+  { id: "education", label: "/education", icon: "🎓" },
+  { id: "skills", label: "/skills", icon: "💻" },
+  { id: "publications", label: "/publications", icon: "📝" },
+  { id: "certifications", label: "/certifications", icon: "🎖️" }
 ];
 
 const experienceGroups = [
@@ -97,7 +99,8 @@ const certificationsList = [
 function handleScroll(id) {
   const element = document.getElementById(id);
   if (element) {
-    const offset = 70;
+    // Offset adjusted since we no longer have a fixed horizontal topbar on desktop screens
+    const offset = window.innerWidth > 960 ? 30 : 70;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -115,16 +118,30 @@ function App() {
 
   return (
     <div className="portfolio-site">
-      <header className="top-navbar">
-        <nav className="header-nav-links">
+      
+      {/* Structural Left Sidebar Layout Integration */}
+      <aside className="left-sidebar-nav">
+        <div className="sidebar-brand-mark">
+          AC<span>.</span>
+        </div>
+        
+        <nav className="sidebar-links-list">
           {navItems.map((item) => (
-            <button key={item.id} onClick={() => handleScroll(item.id)}>
-              {item.label}
+            <button key={item.id} className="sidebar-nav-btn" onClick={() => handleScroll(item.id)}>
+              <span className="nav-emoji" aria-hidden="true">{item.icon}</span>
+              <span className="nav-label-text">{item.label}</span>
             </button>
           ))}
         </nav>
-      </header>
+        
+        <div className="sidebar-footer-icons">
+          <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub"><Github size={15} /></a>
+          <a href="https://scholar.google.gr/citations?user=C20oMOQAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={15} /></a>
+          <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub"><Layers size={15} /></a>
+        </div>
+      </aside>
 
+      {/* Primary content view shell */}
       <main className="content-stream">
         
         {/* Section 1: Hero Block */}
@@ -142,7 +159,6 @@ function App() {
               </button>
             </div>
             
-            {/* Social Links Row Including Active Google Scholar & Docker Hub Mappings */}
             <div className="social-icon-circles">
               <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub"><Github size={16} /></a>
               <a href="https://scholar.google.gr/citations?user=C20oMOQAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={16} /></a>
@@ -152,7 +168,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 2: About Me (PDF Window Completely Replaced by a Minimalist Banner) */}
+        {/* Section 2: About Me */}
         <section className="about-section" id="about">
           <h2 className="section-title-line">About Me</h2>
           <p className="detailed-narrative">
@@ -165,7 +181,6 @@ function App() {
             <span><Clock3 size={14} /> EEST / UTC+2</span>
           </div>
 
-          {/* Minimalist Full-Width Download CV Bar */}
           <a href={cvPath} download="CV_Christopoulou_Andriana.pdf" className="cv-download-banner">
             <div className="banner-left">
               <FileText size={18} className="banner-icon" />
@@ -197,7 +212,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 4: Projects with Active Source Target Links */}
+        {/* Section 4: Projects */}
         <section className="generic-section" id="projects">
           <h2 className="section-title-line">Projects</h2>
           <div className="cards-structural-grid">
@@ -279,7 +294,7 @@ function App() {
           <p>Let's discuss distributed infrastructures, systems automation, or research targets.</p>
           <div className="footer-links-stack">
             <a href="mailto:anchristopoulou@uth.gr" className="footer-email-link">anchristopoulou@uth.gr</a>
-            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link">andrianachristopoulou02@gmail.com</a>
+            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link subtle">andrianachristopoulou02@gmail.com</a>
           </div>
         </section>
 
