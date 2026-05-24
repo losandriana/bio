@@ -145,7 +145,7 @@ function App() {
                 
         <div className="sidebar-footer-icons">
           <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub"><Github size={15} /></a>
-          <a href="https://scholar.google.gr/citations?user=C200MOOAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={15} /></a>
+          <a href="https://scholar.google.gr/citations?user=C20oMOQAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={15} /></a>
           <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub"><Layers size={15} /></a>
         </div>
       </aside>
