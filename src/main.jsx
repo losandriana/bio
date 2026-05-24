@@ -115,7 +115,7 @@ function App() {
       {/* Left Sidebar Fixed Menu Container */}
       <aside className="left-sidebar-nav">
         <div className="sidebar-brand-mark">
-          AC<span>.</span>
+          Andriana Christopoulou<span>.</span>
         </div>
         
         <nav className="sidebar-links-list">
