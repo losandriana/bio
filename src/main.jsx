@@ -33,13 +33,13 @@ const navItems = [
 const experienceGroups = [
   {
     company: "University of Thessaly (Dept. of Computer Science & Telecommunications)",
-    role: "IT Researcher",
+    role: "Associate Researcher",
     date: "Apr 2025 - Present",
     details: "Analyzed technical requirements and designed architectures for distributed IoT systems and edge infrastructures. Developed interoperability mechanisms and integrated containerized services."
   },
   {
     company: "University of Thessaly (Dept. of Digital Systems)",
-    role: "Part-time IT Professional",
+    role: "Associate Researcher",
     date: "Sep 2024 - Apr 2025",
     details: "Designed and developed smart IoT platforms using Docker, MQTT, LoRaWAN, FIWARE, and MongoDB/InfluxDB. Installed, configured, and evaluated edge computing pilot implementations."
   }
@@ -279,7 +279,7 @@ function App() {
           <p>Let's discuss distributed infrastructures, systems automation, or research targets.</p>
           <div className="footer-links-stack">
             <a href="mailto:anchristopoulou@uth.gr" className="footer-email-link">anchristopoulou@uth.gr</a>
-            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link subtle">andrianachristopoulou02@gmail.com</a>
+            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link">andrianachristopoulou02@gmail.com</a>
           </div>
         </section>
 
