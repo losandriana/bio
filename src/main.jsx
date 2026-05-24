@@ -9,12 +9,10 @@ import {
   Clock3,
   Download,
   FileText,
-  Layers,
-  Code2
+  Layers
 } from "lucide-react";
 import "./styles.css";
 
-// Replaced the broken icon references with clean string emojis matching your template
 const navItems = [
   { id: "home", label: "/home", icon: "🏠" },
   { id: "about", label: "/about", icon: "👤" },
@@ -112,10 +110,11 @@ function App() {
   return (
     <div className="portfolio-site">
       
-      {/* Left Sidebar Fixed Menu Container */}
+      {/* Structural Left Sidebar Layout */}
       <aside className="left-sidebar-nav">
-        <div className="sidebar-brand-mark">
-          Andriana Christopoulou
+        <div className="sidebar-stacked-brand">
+          <span className="first-name-row">Andriana</span>
+          <span className="last-name-row">Christopoulou</span>
         </div>
         
         <nav className="sidebar-links-list">
@@ -134,12 +133,12 @@ function App() {
         </div>
       </aside>
 
-      {/* Main Content Body Frame */}
+      {/* Main Stream Pane */}
       <main className="content-stream">
         
-        {/* Responsive Widescreen Split Hero Grid */}
+        {/* Clean Static Headline Hero Block */}
         <section className="hero-section" id="home">
-          <div className="hero-left-column">
+          <div className="hero-text-content">
             <h1 className="static-name-heading">
               Andriana<br />Christopoulou
             </h1>
@@ -158,25 +157,10 @@ function App() {
               <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub"><Layers size={16} /></a>
               <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email"><Mail size={16} /></a>
             </div>
-
-            <div className="horizontal-metadata-strip">
-              <div className="meta-item">
-                <MapPin size={13} />
-                <span>Lamia/Larissa, Greece</span>
-              </div>
-              <div className="meta-item">
-                <Globe2 size={13} />
-                <span>Available Worldwide</span>
-              </div>
-              <div className="meta-item">
-                <Clock3 size={13} />
-                <span>EEST / UTC+2</span>
-              </div>
-            </div>
           </div>
         </section>
 
-        {/* Section 2: About Me & Minimalist Link Banner */}
+        {/* Section 2: About Me */}
         <section className="about-section" id="about">
           <h2 className="section-title-line">About Me</h2>
           <p className="detailed-narrative">
@@ -194,7 +178,7 @@ function App() {
               <FileText size={18} className="banner-icon" />
               <div className="banner-text">
                 <span className="banner-title">CV</span>
-                <span className="banner-subtitle">Click to view or download full CV</span>
+                <span className="banner-subtitle">Click to view or download full English CV</span>
               </div>
             </div>
             <div className="banner-right">
@@ -220,7 +204,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 4: Projects with Active Repository Links */}
+        {/* Section 4: Projects */}
         <section className="generic-section" id="projects">
           <h2 className="section-title-line">Projects</h2>
           <div className="cards-structural-grid">
