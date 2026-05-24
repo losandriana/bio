@@ -14,16 +14,15 @@ import {
 import "./styles.css";
 
 const navItems = [
-  { id: "home", label: "/home", icon: Home },
-  { id: "experience", label: "/experience", icon: BriefcaseBusiness },
-  { id: "projects", label: "/projects", icon: Folder },
-  { id: "education", label: "/education", icon: GraduationCap },
-  { id: "skills", label: "/skills", icon: Code2 },
-  { id: "publications", label: "/publications", icon: ScrollText },
-  { id: "certifications", label: "/certifications", icon: Award },
-  { id: "more", label: "/more", icon: Wrench }
+  { id: "home", label: "/home", icon: "🏠" },
+  { id: "about", label: "/about", icon: "👤" },
+  { id: "experience", label: "/experience", icon: "💼" },
+  { id: "projects", label: "/projects", icon: "📁" },
+  { id: "education", label: "/education", icon: "🎓" },
+  { id: "skills", label: "/skills", icon: "💻" },
+  { id: "publications", label: "/publications", icon: "📝" },
+  { id: "certifications", label: "/certifications", icon: "🎖️" }
 ];
-
 
 const experienceGroups = [
   {
@@ -286,7 +285,7 @@ function App() {
           <p>Let's discuss distributed infrastructures, systems automation, or research targets.</p>
           <div className="footer-links-stack">
             <a href="mailto:anchristopoulou@uth.gr" className="footer-email-link">anchristopoulou@uth.gr</a>
-            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link">andrianachristopoulou02@gmail.com [cite: 3]</a>
+            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link subtle">andrianachristopoulou02@gmail.com [cite: 3]</a>
           </div>
         </section>
 
