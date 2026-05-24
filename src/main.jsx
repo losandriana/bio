@@ -170,8 +170,8 @@ function App() {
             <div className="banner-left">
               <FileText size={18} className="banner-icon" />
               <div className="banner-text">
-                <span className="banner-title">Curriculum Vitae</span>
-                <span className="banner-subtitle">Click to view or download full English resume profile</span>
+                <span className="banner-title">CV</span>
+                <span className="banner-subtitle">Click to view or download full CV</span>
               </div>
             </div>
             <div className="banner-right">
