@@ -26,61 +26,115 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Header Top Menu Navbar */
-.top-navbar {
+/* Master Grid View Framework */
+.portfolio-site {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Fixed Left Sidebar Template System */
+.left-sidebar-nav {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  height: 70px;
-  background-color: rgba(6, 8, 19, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  bottom: 0;
+  width: 220px; /* Aligned with your system blueprint geometry */
+  background-color: #03040a;
+  border-right: 1px solid var(--border-line);
+  padding: 40px 0 30px 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 60px;
-  border-bottom: 1px solid var(--border-line);
+  flex-direction: column;
+  align-items: flex-start;
   z-index: 100;
 }
 
-.header-nav-links {
-  display: flex;
-  gap: 28px;
+.sidebar-brand-mark {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  padding-left: 32px;
+  margin-bottom: 40px;
+  letter-spacing: -0.03em;
 }
 
-.header-nav-links button {
+.sidebar-brand-mark span {
+  color: var(--brand-green);
+}
+
+.sidebar-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.sidebar-nav-btn {
   background: transparent;
   border: none;
+  width: 100%;
+  padding: 12px 16px 12px 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: var(--text-muted);
-  font-size: 13px;
-  font-weight: 500;
   cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  border-left: 3px solid transparent;
+}
+
+.nav-emoji {
+  font-size: 14px;
+  display: inline-block;
+}
+
+.nav-label-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sidebar-nav-btn:hover {
+  color: var(--text-primary);
+  background-color: rgba(59, 226, 164, 0.04);
+  border-left-color: var(--brand-green);
+}
+
+.sidebar-footer-icons {
+  margin-top: auto;
+  padding-left: 32px;
+  display: flex;
+  gap: 16px;
+  color: var(--text-dim);
+}
+
+.sidebar-footer-icons a {
+  color: inherit;
   transition: color 0.15s ease;
 }
 
-.header-nav-links button:hover {
-  color: var(--text-primary);
+.sidebar-footer-icons a:hover {
+  color: var(--brand-green);
 }
 
-/* Master Stream Canvas Container */
+/* Content Frame Area Offset Adjustment */
 .content-stream {
+  flex: 1;
+  margin-left: 220px; /* Sidebar offset */
   max-width: 1040px; 
-  margin: 0 auto;
-  padding: 160px 40px 100px 40px;
+  padding: 80px 60px 100px 60px;
 }
 
 .hero-section,
 .about-section,
 .generic-section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 40px;
 }
 
-/* Hero Panel Presenter */
+/* Layout Modules */
 .hero-section {
   display: flex;
   align-items: center;
-  min-height: calc(55vh - 120px);
+  min-height: calc(60vh - 80px);
   margin-bottom: 80px;
 }
 
@@ -152,7 +206,6 @@ html, body {
   background-color: rgba(59, 226, 164, 0.04);
 }
 
-/* Minimalist Section Titles */
 .section-title-line {
   font-size: 24px;
   font-weight: 800;
@@ -207,7 +260,6 @@ html, body {
   color: var(--brand-green);
 }
 
-/* Sleek Minimal Full-Width Resume Banner Box */
 .cv-download-banner {
   width: 100%;
   border: 1px solid var(--border-line);
@@ -263,11 +315,6 @@ html, body {
   color: var(--brand-green);
 }
 
-/* Professional Engineering Layout Stacks */
-.generic-section {
-  margin-bottom: 80px;
-}
-
 .editorial-stack {
   display: flex;
   flex-direction: column;
@@ -318,7 +365,6 @@ html, body {
   margin-top: 6px;
 }
 
-/* Layout Project Cards */
 .cards-structural-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -376,7 +422,6 @@ html, body {
   color: var(--text-muted);
 }
 
-/* Category Skill Clouds */
 .skills-split-layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -406,7 +451,6 @@ html, body {
   border-radius: 4px;
 }
 
-/* Flat Metric List Rows */
 .flat-rows-list {
   display: flex;
   flex-direction: column;
@@ -430,7 +474,6 @@ html, body {
   color: var(--text-dim);
 }
 
-/* Contact Footer Area */
 .contact-footer-block p {
   color: var(--text-muted);
   font-size: 14px;
@@ -458,13 +501,12 @@ html, body {
 }
 
 @media (max-width: 960px) {
-  .top-navbar { padding: 0 24px; }
-  .content-stream { padding: 120px 24px 60px 24px; }
+  .left-sidebar-nav { display: none; }
+  .content-stream { margin-left: 0; padding: 40px 24px; }
   .cards-structural-grid { grid-template-columns: 1fr; }
   .skills-split-layout { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
-  .header-nav-links { display: none; }
   .tile-header-row { flex-direction: column; gap: 4px; }
 }
