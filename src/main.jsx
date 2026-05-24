@@ -111,7 +111,7 @@ function App() {
   return (
     <div className="portfolio-site">
       
-      {/* Sidebar Navigation */}
+      {/* Left Sidebar Fixed Menu Container */}
       <aside className="left-sidebar-nav">
         <div className="sidebar-brand-mark">
           AC<span>.</span>
@@ -133,10 +133,10 @@ function App() {
         </div>
       </aside>
 
-      {/* Main Content Stream */}
+      {/* Main Content Body Frame */}
       <main className="content-stream">
         
-        {/* Dynamic Multi-Column Split Hero Layout */}
+        {/* Responsive Widescreen Split Hero Grid */}
         <section className="hero-section" id="home">
           <div className="hero-left-column">
             <h1 className="static-name-heading">
@@ -158,7 +158,7 @@ function App() {
               <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email"><Mail size={16} /></a>
             </div>
 
-            {/* Injected Core Metrics Architecture Matrix Box */}
+            {/* Metric Skill Progress Assessment Box */}
             <div className="core-skills-matrix-card">
               <div className="matrix-card-header">
                 <Code2 size={14} className="accent-icon" />
@@ -176,7 +176,7 @@ function App() {
                   <span className="skill-tier">Expert</span>
                 </div>
                 <div className="matrix-skill-row">
-                  <span className="skill-name">Robotics Systems Engineering (ROS)</span>
+                  <span className="skill-name">Robotics Engineering (ROS)</span>
                   <div className="skill-progress-bar"><i style={{ width: "86%" }}></i></div>
                   <span className="skill-tier">Advanced</span>
                 </div>
@@ -189,7 +189,7 @@ function App() {
             </div>
           </div>
 
-          {/* Right Side Info & Workspace Block Metadata Section */}
+          {/* Hero Right Column Workspace Module */}
           <div className="hero-right-column">
             <div className="workspace-terminal-mockup">
               <div className="terminal-header-strip">
@@ -221,7 +221,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 2: About Me */}
+        {/* Section 2: About Me & Minimalist Link Banner */}
         <section className="about-section" id="about">
           <h2 className="section-title-line">About Me</h2>
           <p className="detailed-narrative">
@@ -265,7 +265,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 4: Projects */}
+        {/* Section 4: Projects with Active Repository Links */}
         <section className="generic-section" id="projects">
           <h2 className="section-title-line">Projects</h2>
           <div className="cards-structural-grid">
@@ -347,7 +347,7 @@ function App() {
           <p>Let's discuss distributed infrastructures, systems automation, or research targets.</p>
           <div className="footer-links-stack">
             <a href="mailto:anchristopoulou@uth.gr" className="footer-email-link">anchristopoulou@uth.gr</a>
-            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link">andrianachristopoulou02@gmail.com</a>
+            <a href="mailto:andrianachristopoulou02@gmail.com" className="footer-email-link subtle">andrianachristopoulou02@gmail.com</a>
           </div>
         </section>
 
