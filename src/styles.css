@@ -37,7 +37,7 @@ html, body {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 240px; /* Enhanced width tracking to fully separate sidebar from workspace elements */
+  width: 240px; 
   background-color: #03040a;
   border-right: 1px solid var(--border-line);
   padding: 40px 0 30px 0;
@@ -80,7 +80,7 @@ html, body {
   text-align: left;
   transition: all 0.15s ease;
   border-left: 3px solid transparent;
-  white-space: nowrap; /* Forces layout text engine to stay aligned on one line */
+  white-space: nowrap; 
 }
 
 .nav-emoji {
@@ -116,11 +116,11 @@ html, body {
   color: var(--brand-green);
 }
 
-/* Main Content Area Grid Tuning */
+/* Content Stream Workspace Panel Layout */
 .content-stream {
   flex: 1;
-  margin-left: 240px; /* Matches layout sidebar size width */
-  max-width: 1200px; /* Widened parameter bounds to optimize landscape widescreen displays */
+  margin-left: 240px; 
+  max-width: 1200px; 
   padding: 80px 60px 100px 60px;
 }
 
@@ -130,10 +130,10 @@ html, body {
   scroll-margin-top: 40px;
 }
 
-/* Widescreen Multi-Column Hero Layout */
+/* Widescreen Hero Split Grid System Layout */
 .hero-section {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* Fixed narrow compression via landscape grids layout */
+  grid-template-columns: 1.15fr 0.85fr; 
   gap: 48px;
   align-items: start;
   min-height: calc(70vh - 80px);
@@ -146,8 +146,8 @@ html, body {
 }
 
 .static-name-heading {
-  margin: 0 0 16px 0;
-  font-size: clamp(38px, 5.5vw, 62px); /* Scale tuning prevents oversized line break loops */
+  margin: 0 0 20px 0;
+  font-size: clamp(40px, 6vw, 64px); 
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.1;
@@ -190,7 +190,7 @@ html, body {
 .social-icon-circles {
   display: flex;
   gap: 12px;
-  margin-bottom: 40px; /* Separates icons line from structural skills panel matrix */
+  margin-bottom: 40px; 
 }
 
 .social-icon-circles a {
@@ -210,12 +210,12 @@ html, body {
   background-color: rgba(59, 226, 164, 0.04);
 }
 
-/* Injected Core Architecture Skills Box */
+/* Injected Custom Core Top Skills Box */
 .core-skills-matrix-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-line);
   border-radius: 6px;
-  padding: 20px;
+  padding: 24px;
   margin-top: 10px;
 }
 
@@ -238,12 +238,12 @@ html, body {
 .matrix-rows-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .matrix-skill-row {
   display: grid;
-  grid-template-columns: 180px 1fr 65px;
+  grid-template-columns: 210px 1fr 65px; 
   align-items: center;
   gap: 16px;
   font-size: 11px;
@@ -274,7 +274,7 @@ html, body {
   font-weight: 600;
 }
 
-/* Hero Right Column Architecture elements block layout links */
+/* Hero Right Column Workspace Container */
 .hero-right-column {
   display: flex;
   flex-direction: column;
@@ -354,7 +354,7 @@ html, body {
   color: var(--text-dim);
 }
 
-/* Generic Headers Setup */
+/* Technical Content Section Setup headers */
 .section-title-line {
   font-size: 22px;
   font-weight: 800;
@@ -649,8 +649,8 @@ html, body {
   font-weight: 500;
 }
 
-/* Adaptive Responsiveness Configuration rules */
-@media (max-width: 1100px) {
+/* Widescreen Scaling Breakpoints */
+@media (max-width: 1160px) {
   .hero-section {
     grid-template-columns: 1fr;
     gap: 32px;
