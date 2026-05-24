@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+
 import {
   Github,
   Mail,
@@ -9,19 +10,28 @@ import {
   Clock3,
   Download,
   FileText,
-  Layers
+  Layers,
+  Home,
+  BriefcaseBusiness,
+  Folder,
+  GraduationCap,
+  Code2,
+  Award,
+  Wrench,
+  User
 } from "lucide-react";
+
 import "./styles.css";
 
 const navItems = [
-  { id: "home", label: "/home", icon: "🏠" },
-  { id: "about", label: "/about", icon: "👤" },
-  { id: "experience", label: "/experience", icon: "💼" },
-  { id: "projects", label: "/projects", icon: "📁" },
-  { id: "education", label: "/education", icon: "🎓" },
-  { id: "skills", label: "/skills", icon: "💻" },
-  { id: "publications", label: "/publications", icon: "📝" },
-  { id: "certifications", label: "/certifications", icon: "🎖️" }
+  { id: "home", label: "/home", icon: Home },
+  { id: "about", label: "/about", icon: User },
+  { id: "experience", label: "/experience", icon: BriefcaseBusiness },
+  { id: "projects", label: "/projects", icon: Folder },
+  { id: "education", label: "/education", icon: GraduationCap },
+  { id: "skills", label: "/skills", icon: Code2 },
+  { id: "publications", label: "/publications", icon: ScrollText },
+  { id: "certifications", label: "/certifications", icon: Award }
 ];
 
 const experienceGroups = [
@@ -119,13 +129,20 @@ function App() {
         
         <nav className="sidebar-links-list">
           {navItems.map((item) => (
-            <button key={item.id} className="sidebar-nav-btn" onClick={() => handleScroll(item.id)}>
-              <span className="nav-emoji">{item.icon}</span>
-              <span className="nav-label-text">{item.label}</span>
+            <button
+              key={item.id}
+              className="sidebar-nav-btn"
+              onClick={() => handleScroll(item.id)}
+            >
+              <item.icon className="sidebar-nav-icon" />
+              
+              <span className="nav-label-text">
+                {item.label}
+              </span>
             </button>
           ))}
         </nav>
-        
+                
         <div className="sidebar-footer-icons">
           <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub"><Github size={15} /></a>
           <a href="https://scholar.google.gr/citations?user=C200MOOAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={15} /></a>
