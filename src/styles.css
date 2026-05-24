@@ -26,19 +26,18 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Master Grid View Framework */
 .portfolio-site {
   display: flex;
   min-height: 100vh;
 }
 
-/* Fixed Left Sidebar Template System */
+/* Fixed Left Sidebar Template Structure */
 .left-sidebar-nav {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 220px; /* Aligned with your system blueprint geometry */
+  width: 240px; /* Enhanced width tracking to fully separate sidebar from workspace elements */
   background-color: #03040a;
   border-right: 1px solid var(--border-line);
   padding: 40px 0 30px 0;
@@ -75,12 +74,13 @@ html, body {
   padding: 12px 16px 12px 32px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   color: var(--text-muted);
   cursor: pointer;
   text-align: left;
   transition: all 0.15s ease;
   border-left: 3px solid transparent;
+  white-space: nowrap; /* Forces layout text engine to stay aligned on one line */
 }
 
 .nav-emoji {
@@ -116,11 +116,11 @@ html, body {
   color: var(--brand-green);
 }
 
-/* Content Frame Area Offset Adjustment */
+/* Main Content Area Grid Tuning */
 .content-stream {
   flex: 1;
-  margin-left: 220px; /* Sidebar offset */
-  max-width: 1040px; 
+  margin-left: 240px; /* Matches layout sidebar size width */
+  max-width: 1200px; /* Widened parameter bounds to optimize landscape widescreen displays */
   padding: 80px 60px 100px 60px;
 }
 
@@ -130,30 +130,33 @@ html, body {
   scroll-margin-top: 40px;
 }
 
-/* Layout Modules */
+/* Widescreen Multi-Column Hero Layout */
 .hero-section {
-  display: flex;
-  align-items: center;
-  min-height: calc(60vh - 80px);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Fixed narrow compression via landscape grids layout */
+  gap: 48px;
+  align-items: start;
+  min-height: calc(70vh - 80px);
   margin-bottom: 80px;
 }
 
-.hero-text-content {
-  width: 100%;
+.hero-left-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .static-name-heading {
-  margin: 0 0 20px 0;
-  font-size: clamp(44px, 7.5vw, 72px);
+  margin: 0 0 16px 0;
+  font-size: clamp(38px, 5.5vw, 62px); /* Scale tuning prevents oversized line break loops */
   font-weight: 800;
   color: var(--text-primary);
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
 .static-role-subline {
-  margin: 0 0 36px 0;
-  font-size: 15px;
+  margin: 0 0 28px 0;
+  font-size: 14px;
   font-weight: 600;
   color: var(--brand-green);
   letter-spacing: 0.02em;
@@ -161,19 +164,19 @@ html, body {
 
 .static-role-subline span {
   color: var(--text-dim);
-  margin: 0 10px;
+  margin: 0 8px;
 }
 
 .hero-cta-row {
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 
 .cta-primary-btn {
   background-color: transparent;
   border: 1px solid var(--brand-green);
   color: var(--brand-green);
-  padding: 12px 36px;
-  font-size: 14px;
+  padding: 11px 32px;
+  font-size: 13px;
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
@@ -187,6 +190,7 @@ html, body {
 .social-icon-circles {
   display: flex;
   gap: 12px;
+  margin-bottom: 40px; /* Separates icons line from structural skills panel matrix */
 }
 
 .social-icon-circles a {
@@ -206,8 +210,153 @@ html, body {
   background-color: rgba(59, 226, 164, 0.04);
 }
 
+/* Injected Core Architecture Skills Box */
+.core-skills-matrix-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-line);
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.matrix-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+}
+
+.accent-icon {
+  color: var(--brand-green);
+}
+
+.matrix-rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.matrix-skill-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 65px;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+}
+
+.skill-name {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.skill-progress-bar {
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-progress-bar i {
+  display: block;
+  height: 100%;
+  background-color: var(--brand-green);
+  border-radius: inherit;
+}
+
+.skill-tier {
+  color: var(--text-dim);
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Hero Right Column Architecture elements block layout links */
+.hero-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.workspace-terminal-mockup {
+  background-color: #03040a;
+  border: 1px solid var(--border-line);
+  border-radius: 6px;
+  padding: 16px;
+  min-height: 160px;
+}
+
+.terminal-header-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed rgba(28, 33, 58, 0.4);
+  padding-bottom: 8px;
+}
+
+.terminal-bullets {
+  display: flex;
+  gap: 5px;
+}
+
+.terminal-bullets i {
+  width: 5px;
+  height: 5px;
+  background-color: var(--text-dim);
+  border-radius: 50%;
+}
+
+.terminal-header-strip span {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.terminal-content-area {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.terminal-command-line {
+  color: var(--brand-green);
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.terminal-content-area p:not(.terminal-command-line) {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.horizontal-metadata-strip {
+  border: 1px solid var(--border-line);
+  background-color: rgba(14, 17, 34, 0.4);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 18px;
+  gap: 10px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.meta-item svg {
+  color: var(--text-dim);
+}
+
+/* Generic Headers Setup */
 .section-title-line {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   margin: 0 0 32px 0;
   display: flex;
@@ -500,6 +649,14 @@ html, body {
   font-weight: 500;
 }
 
+/* Adaptive Responsiveness Configuration rules */
+@media (max-width: 1100px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 @media (max-width: 960px) {
   .left-sidebar-nav { display: none; }
   .content-stream { margin-left: 0; padding: 40px 24px; }
@@ -509,4 +666,6 @@ html, body {
 
 @media (max-width: 640px) {
   .tile-header-row { flex-direction: column; gap: 4px; }
+  .matrix-skill-row { grid-template-columns: 1fr; gap: 4px; }
+  .skill-tier { text-align: left; }
 }
