@@ -12,15 +12,14 @@ import {
   GraduationCap,
   Code2,
   Award,
-  User,
   ExternalLink
 } from "lucide-react";
 
 import "./styles.css";
 
+// FIXED: Removed the "/about" item from the nav list
 const navItems = [
   { id: "home", label: "/home", icon: Home },
-  { id: "about", label: "/about", icon: User },
   { id: "experience", label: "/experience", icon: BriefcaseBusiness },
   { id: "projects", label: "/projects", icon: Folder },
   { id: "education", label: "/education", icon: GraduationCap },
@@ -29,7 +28,6 @@ const navItems = [
   { id: "certifications", label: "/certifications", icon: Award }
 ];
 
-// UPDATED: Added structural data properties for project logos and external site links
 const experienceGroups = [
   {
     company: "University of Thessaly (Dept. of Informatics & Telecommunications)",
@@ -237,7 +235,7 @@ function App() {
         {/* Clean Static Headline Hero Block */}
         <section className="hero-section" id="home">
         
-          {/* LEFT SIDE */}
+          {/* LEFT SIDE (Now holds your header and the new introduction narrative) */}
           <div className="hero-text-content">
             <h1 className="static-name-heading">
               Andriana<br />Christopoulou
@@ -245,6 +243,15 @@ function App() {
         
             <p className="static-role-subline">
               Networks & IoT Engineer <span>•</span> Robotics Specialist
+            </p>
+
+            {/* NEW: Introduction summary added right into the empty layout gap */}
+            <p className="hero-narrative-bio">
+              I am a Ph.D. Candidate and Associate Researcher focused on edge intelligence, 
+              distributed middleware infrastructures, and resilient wireless networks. My research 
+              at the University of Thessaly bridges the gap between decentralized IoT environments 
+              and real-time autonomous systems, developing containerized pipelines and low-latency 
+              architectures for next-generation communication networks.
             </p>
         
             <div className="hero-cta-row">
@@ -333,7 +340,6 @@ function App() {
           <div className="editorial-stack">
             {experienceGroups.map((job, idx) => (
               <article className="editorial-tile" key={idx}>
-                {/* UPDATED: Flex-row structure allowing project logo integration */}
                 <div className="tile-content-wrapper">
                   {job.logo && (
                     <a href={job.url} target="_blank" rel="noreferrer" className="tile-project-logo-link" title="Visit Project Website">
