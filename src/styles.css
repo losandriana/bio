@@ -182,7 +182,7 @@ body {
 }
 
 .static-role-subline {
-  margin: 0 0 20px 0; /* Reduced margin slightly to fit bio naturally above buttons */
+  margin: 0 0 20px 0; 
   font-size: 15px; 
   font-weight: 600;
   color: var(--brand-green);
@@ -193,12 +193,11 @@ body {
   margin: 0 10px;
 }
 
-/* NEW: Styles for the central bio text block filling up the layout gap */
 .hero-narrative-bio {
   font-size: 15px;
   line-height: 1.8;
   color: var(--text-muted);
-  max-width: 620px; /* Restricts content stretch so it reads comfortably */
+  max-width: 620px; 
   margin: 0 0 28px 0;
 }
 
@@ -244,6 +243,20 @@ body {
   color: var(--text-primary);
   border-color: var(--brand-green);
   background-color: rgba(14, 17, 34, 0.8);
+}
+
+/* NEW: Highlighted custom background styling for the new CV link element */
+.social-icon-circles a.cv-download-circle-btn {
+  color: var(--brand-green);
+  border-color: rgba(59, 226, 164, 0.3);
+  background-color: rgba(59, 226, 164, 0.03);
+}
+
+.social-icon-circles a.cv-download-circle-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--brand-green);
+  background-color: var(--brand-green-hover);
+  box-shadow: 0 0 15px rgba(59, 226, 164, 0.4);
 }
 
 /* ======================================
