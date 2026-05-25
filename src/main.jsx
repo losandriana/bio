@@ -70,7 +70,7 @@ const technicalProjects = [
 
 const educationHistory = [
   { title: "Ph.D. Candidate in Digital Systems", meta: "Apr 2026 - Present · University of Thessaly", body: "Thesis Focus: Edge Intelligence and Resilient Wireless Networking for Real-Time Autonomous and IoT Systems." },
-  { title: "M.Sc. Advanced Communication Systems & IoT", meta: "Oct 2024 - March 2026 · University of Thessaly", body: "Graduated with Honors (9.71/10). Thesis: Neural Network-Assisted LLR Estimation and Adaptive Modulation for Improved Channel Quality." },
+  { title: "M.Sc. Modern Communication Systems & IoT", meta: "Oct 2024 - March 2026 · University of Thessaly", body: "Graduated with Honors (9.71/10). Thesis: Neural Network-Assisted LLR Estimation and Adaptive Modulation for Improved Channel Quality." },
   { title: "B.Sc. Digital Systems", meta: "Oct 2020 - July 2024 · University of Thessaly", body: "Graduated 7.74/10. Thesis: Design for Optimal Coverage in Low-Power LoRa Networks. WiMoTS Research Lab Member." }
 ];
 
