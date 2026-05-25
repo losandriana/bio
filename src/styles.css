@@ -56,31 +56,16 @@ body {
 
 .sidebar-stacked-brand {
   display: flex;
-  justify-content: center; /* Centers the logo horizontally */
-  align-items: center;     /* Centers the logo vertically */
-  padding: 15px 0;         /* Adds some breathing room around it */
+  justify-content: center; 
+  align-items: center;     
+  padding: 15px 0;         
 }
 
+/* UPDATED: Scaling up the branding element size safely */
 .sidebar-logo {
-  max-width: 100%;         /* Ensures it never spills out of the sidebar */
-  height: auto;            /* Keeps the logo's original proportions */
-  width: 50px;             /* Control the size here (adjust as needed) */
-}
-
-.first-name-row {
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-}
-
-.last-name-row {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 4px;
+  max-width: 100%;         
+  height: auto;            
+  width: 85px;             
 }
 
 .sidebar-links-list {
@@ -144,20 +129,18 @@ body {
    MAIN CONTENT
 ====================================== */
 
+/* UPDATED: Removed max-width constraint to fill the page grid naturally */
 .content-stream {
   flex: 1;
   margin-left: 210px;
-  max-width: 1320px;
-  padding: 52px 48px 72px 48px;
+  padding: 52px 64px 72px 64px;
 }
 
 .hero-section,
-.about-section,
 .generic-section {
   scroll-margin-top: 40px;
 }
 
-.about-section,
 .generic-section {
   margin-bottom: 64px;
 }
@@ -166,10 +149,11 @@ body {
    HERO
 ====================================== */
 
+/* UPDATED: Widened layout columns to handle expansive displays fluidly */
 .hero-section {
   display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 56px;
+  grid-template-columns: 1fr 400px;
+  gap: 64px;
   align-items: center;
   min-height: 68vh;
   margin-bottom: 72px;
@@ -351,79 +335,6 @@ body {
 }
 
 /* ======================================
-   ABOUT
-====================================== */
-
-.detailed-narrative {
-  max-width: 760px;
-  font-size: 13px;
-  line-height: 1.75;
-  color: var(--text-muted);
-  margin-bottom: 18px;
-}
-
-.quick-specs-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin: 0 0 28px 0;
-  font-size: 11px;
-  color: var(--text-dim);
-}
-
-.quick-specs-grid span {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.inline-email-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.inline-email-link:hover {
-  color: var(--brand-green);
-}
-
-/* ======================================
-   CV
-====================================== */
-
-.cv-download-banner {
-  width: 100%;
-  max-width: 680px;
-  border: 1px solid var(--border-line);
-  background-color: var(--bg-surface);
-  padding: 12px 16px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.15s ease;
-}
-
-.cv-download-banner:hover {
-  border-color: var(--brand-green);
-}
-
-.banner-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.banner-title {
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.banner-subtitle {
-  font-size: 10px;
-  color: var(--text-dim);
-}
-
-/* ======================================
    EXPERIENCE / EDUCATION
 ====================================== */
 
@@ -464,7 +375,7 @@ body {
 
 .tile-description-body {
   margin: 0;
-  max-width: 780px;
+  max-width: 100%; /* Changed from 780px to align beautifully with full layout width */
   font-size: 12px;
   line-height: 1.7;
   color: var(--text-muted);
@@ -482,10 +393,11 @@ body {
    PROJECTS
 ====================================== */
 
+/* UPDATED: Uses an auto-fit template logic to dynamically absorb whitespace */
 .cards-structural-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
 }
 
 .info-display-card {
@@ -617,12 +529,6 @@ body {
    RESPONSIVE
 ====================================== */
 
-@media (max-width: 1100px) {
-  .cards-structural-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 960px) {
   .left-sidebar-nav {
     display: none;
@@ -638,10 +544,6 @@ body {
     grid-template-columns: 1fr;
     gap: 32px;
     min-height: auto;
-  }
-
-  .cards-structural-grid {
-    grid-template-columns: 1fr;
   }
 
   .skills-split-layout {
