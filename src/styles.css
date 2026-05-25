@@ -5,7 +5,7 @@
   --bg-surface: #0e1122;
   --text-primary: #ffffff;
   --text-muted: #abb4c7;
-  --text-dim: #7e89a0; /* Shifted slightly lighter to keep visibility strong at larger scale */
+  --text-dim: #7e89a0; 
   --brand-green: #3be2a4;
   --brand-green-hover: #2ec58d;
   --border-line: #1c213a;
@@ -31,7 +31,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Structural changes for the interactive wallpaper mesh layer */
 .network-animated-bg {
   position: fixed;
   top: 0;
@@ -39,7 +38,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 1;
-  pointer-events: none; /* Stops canvas from blocking your standard click events */
+  pointer-events: none; 
 }
 
 .portfolio-site {
@@ -58,8 +57,8 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 230px; /* Widened slightly to accommodate larger navigational fonts */
-  background-color: rgba(3, 4, 10, 0.93); /* Added high-density blur fallback */
+  width: 230px; 
+  background-color: rgba(3, 4, 10, 0.93); 
   backdrop-filter: blur(8px);
   border-right: 1px solid var(--border-line);
   padding: 28px 0 22px 0;
@@ -78,7 +77,7 @@ body {
 .sidebar-logo {
   max-width: 100%;         
   height: auto;            
-  width: 95px; /* Bumped up from 85px to stay balanced with text scaling */            
+  width: 95px;             
 }
 
 .sidebar-links-list {
@@ -110,14 +109,14 @@ body {
 }
 
 .sidebar-nav-icon {
-  width: 16px; /* Scaled up icon */
+  width: 16px; 
   height: 16px;
   stroke-width: 2px;
   flex-shrink: 0;
 }
 
 .nav-label-text {
-  font-size: 13px; /* SCALED UP (was 11px) */
+  font-size: 13px; 
   font-weight: 600;
 }
 
@@ -176,7 +175,7 @@ body {
 
 .static-name-heading {
   margin: 0 0 16px 0;
-  font-size: clamp(44px, 5.5vw, 64px); /* SCALED UP heading proportions */
+  font-size: clamp(44px, 5.5vw, 64px); 
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.04em;
@@ -184,7 +183,7 @@ body {
 
 .static-role-subline {
   margin: 0 0 28px 0;
-  font-size: 15px; /* SCALED UP (was 13px) */
+  font-size: 15px; 
   font-weight: 600;
   color: var(--brand-green);
 }
@@ -202,8 +201,8 @@ body {
   background-color: transparent;
   border: 1px solid var(--brand-green);
   color: var(--brand-green);
-  padding: 12px 28px; /* Slightly roomier button metrics */
-  font-size: 14px; /* SCALED UP (was 12px) */
+  padding: 12px 28px; 
+  font-size: 14px; 
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
@@ -221,7 +220,7 @@ body {
 }
 
 .social-icon-circles a {
-  width: 42px; /* Grown container diameters for higher accessibility metrics */
+  width: 42px; 
   height: 42px;
   border-radius: 6px;
   border: 1px solid var(--border-line);
@@ -250,7 +249,7 @@ body {
 
 .hero-focus-card,
 .mini-stat-card {
-  background-color: rgba(14, 17, 34, 0.85); /* Smooth backing alpha blend */
+  background-color: rgba(14, 17, 34, 0.85); 
   backdrop-filter: blur(4px);
   border: 1px solid var(--border-line);
   border-radius: 8px;
@@ -267,13 +266,13 @@ body {
 }
 
 .hero-focus-card li {
-  font-size: 15px; /* SCALED UP (was 13px) */
+  font-size: 15px; 
   color: var(--text-muted);
   line-height: 1.6;
 }
 
 .mini-card-label {
-  font-size: 12px; /* SCALED UP (was 10px) */
+  font-size: 12px; 
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--brand-green);
@@ -298,7 +297,7 @@ body {
   background-color: rgba(59, 226, 164, 0.08);
   border: 1px solid rgba(59, 226, 164, 0.2);
   border-radius: 999px;
-  font-size: 13px; /* SCALED UP (was 11px) */
+  font-size: 13px; 
   color: var(--text-muted);
 }
 
@@ -316,12 +315,12 @@ body {
 }
 
 .stats-list strong {
-  font-size: 28px; /* SCALED UP (was 24px) */
+  font-size: 28px; 
   color: var(--text-primary);
 }
 
 .stats-list span {
-  font-size: 13px; /* SCALED UP (was 11px) */
+  font-size: 13px; 
   color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -332,7 +331,7 @@ body {
 ====================================== */
 
 .section-title-line {
-  font-size: 22px; /* SCALED UP (was 18px) */
+  font-size: 22px; 
   font-weight: 800;
   margin: 0 0 32px 0;
   display: flex;
@@ -364,42 +363,98 @@ body {
   padding-left: 20px;
 }
 
+/* NEW: Layout wrappers aligning logos side-by-side with timeline item text cards */
+.tile-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.tile-project-logo-link {
+  flex-shrink: 0;
+  display: block;
+  background-color: rgba(14, 17, 34, 0.7);
+  border: 1px solid var(--border-line);
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.tile-project-logo-link:hover {
+  border-color: var(--brand-green);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 226, 164, 0.1);
+}
+
+.tile-project-logo {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  display: block;
+}
+
+.tile-text-container {
+  flex: 1;
+}
+
+.tile-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project-external-link {
+  font-size: 12px;
+  color: var(--brand-green);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.project-external-link:hover {
+  color: var(--text-primary);
+}
+
 .tile-header-row {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 16px;
 }
 
 .editorial-tile h3 {
   margin: 0;
-  font-size: 18px; /* SCALED UP (was 15px) */
+  font-size: 18px; 
   font-weight: 700;
 }
 
 .tile-date-label {
-  font-size: 13px; /* SCALED UP (was 10px) */
+  font-size: 13px; 
   color: var(--text-dim);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .tile-institution-sub {
   margin: 6px 0 10px 0;
-  font-size: 15px; /* SCALED UP (was 12px) */
-  color: var(--brand-green);
+  font-size: 15px; 
+  color: var(--text-muted); /* Changed to secondary white to give prominence to project link above it */
   font-weight: 500;
 }
 
 .tile-description-body {
   margin: 0;
   max-width: 100%;
-  font-size: 14px; /* SCALED UP (was 12px) */
+  font-size: 14px; 
   line-height: 1.75;
   color: var(--text-muted);
 }
 
 .editorial-link {
-  font-size: 13px; /* SCALED UP (was 11px) */
+  font-size: 13px; 
   color: var(--brand-green);
   text-decoration: underline;
   margin-top: 10px;
@@ -412,7 +467,7 @@ body {
 
 .cards-structural-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Widened minimal threshold column steps */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
   gap: 20px;
 }
 
@@ -441,12 +496,12 @@ body {
 
 .info-display-card h3 {
   margin: 0;
-  font-size: 16px; /* SCALED UP (was 14px) */
+  font-size: 16px; 
   line-height: 1.4;
 }
 
 .card-tag-meta {
-  font-size: 11px; /* SCALED UP (was 9px) */
+  font-size: 11px; 
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-dim);
@@ -456,7 +511,7 @@ body {
 
 .info-display-card p {
   margin: 0;
-  font-size: 14px; /* SCALED UP (was 11px) */
+  font-size: 14px; 
   line-height: 1.7;
   color: var(--text-muted);
 }
@@ -473,7 +528,7 @@ body {
 
 .skills-bucket-block h4 {
   margin: 0 0 14px 0;
-  font-size: 13px; /* SCALED UP (was 11px) */
+  font-size: 13px; 
   text-transform: uppercase;
   color: var(--text-dim);
   letter-spacing: 0.04em;
@@ -489,7 +544,7 @@ body {
   background-color: rgba(14, 17, 34, 0.8);
   border: 1px solid var(--border-line);
   padding: 8px 14px;
-  font-size: 13px; /* SCALED UP (was 10px) */
+  font-size: 13px; 
   border-radius: 6px;
   color: var(--text-muted);
 }
@@ -512,12 +567,12 @@ body {
 }
 
 .row-main-title {
-  font-size: 15px; /* SCALED UP (was 12px) */
+  font-size: 15px; 
   font-weight: 500;
 }
 
 .row-side-meta {
-  font-size: 13px; /* SCALED UP (was 10px) */
+  font-size: 13px; 
   color: var(--text-dim);
 }
 
@@ -526,7 +581,7 @@ body {
 ====================================== */
 
 .contact-footer-block p {
-  font-size: 15px; /* SCALED UP (was 13px) */
+  font-size: 15px; 
   color: var(--text-muted);
   margin-bottom: 24px;
 }
@@ -538,7 +593,7 @@ body {
 }
 
 .footer-email-link {
-  font-size: 20px; /* SCALED UP (was 16px) */
+  font-size: 20px; 
   font-weight: 700;
   color: var(--brand-green);
   text-decoration: none;
@@ -576,6 +631,12 @@ body {
 }
 
 @media (max-width: 640px) {
+  /* NEW: Adjust layout structure safely on mobile viewports so logos drop above text neatly */
+  .tile-content-wrapper {
+    flex-direction: column;
+    gap: 14px;
+  }
+
   .tile-header-row {
     flex-direction: column;
     align-items: flex-start;
