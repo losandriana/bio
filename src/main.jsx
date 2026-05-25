@@ -12,7 +12,8 @@ import {
   GraduationCap,
   Code2,
   Award,
-  User
+  User,
+  ExternalLink
 } from "lucide-react";
 
 import "./styles.css";
@@ -28,18 +29,23 @@ const navItems = [
   { id: "certifications", label: "/certifications", icon: Award }
 ];
 
+// UPDATED: Added structural data properties for project logos and external site links
 const experienceGroups = [
   {
     company: "University of Thessaly (Dept. of Informatics & Telecommunications)",
     role: "Associate Researcher",
     date: "Apr 2025 - Present",
-    details: "Analyzed technical requirements and designed architectures for distributed IoT systems and edge infrastructures. Developed interoperability mechanisms and integrated containerized services."
+    details: "Analyzed technical requirements and designed architectures for distributed IoT systems and edge infrastructures. Developed interoperability mechanisms and integrated containerized services.",
+    logo: "terra.png",
+    url: "https://terra-horizon.eu/"
   },
   {
     company: "University of Thessaly (Dept. of Digital Systems)",
     role: "Associate Researcher",
     date: "Sep 2024 - Apr 2025",
-    details: "Designed and developed smart IoT platforms using Docker, MQTT, LoRaWAN, FIWARE, and MongoDB/InfluxDB. Installed, configured, and evaluated edge computing pilot implementations."
+    details: "Designed and developed smart IoT platforms using Docker, MQTT, LoRaWAN, FIWARE, and MongoDB/InfluxDB. Installed, configured, and evaluated edge computing pilot implementations.",
+    logo: "smartcities.png",
+    url: "https://www.smartcitiesecosystem.gr/"
   }
 ];
 
@@ -108,7 +114,6 @@ function handleScroll(id) {
   }
 }
 
-/* High-performance HTML5 canvas mesh network animation background */
 function NetworkBackground() {
   const canvasRef = useRef(null);
 
@@ -143,13 +148,11 @@ function NetworkBackground() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Update & render wire nodes
       for (let i = 0; i < points.length; i++) {
         const p = points[i];
         p.x += p.vx;
         p.y += p.vy;
 
-        // Bounce back smoothly from edges
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
@@ -158,7 +161,6 @@ function NetworkBackground() {
         ctx.fillStyle = "rgba(59, 226, 164, 0.25)";
         ctx.fill();
 
-        // Calculate and draw interconnected grid links
         for (let j = i + 1; j < points.length; j++) {
           const p2 = points[j];
           const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
@@ -331,12 +333,32 @@ function App() {
           <div className="editorial-stack">
             {experienceGroups.map((job, idx) => (
               <article className="editorial-tile" key={idx}>
-                <div className="tile-header-row">
-                  <h3>{job.role}</h3>
-                  <span className="tile-date-label">{job.date}</span>
+                {/* UPDATED: Flex-row structure allowing project logo integration */}
+                <div className="tile-content-wrapper">
+                  {job.logo && (
+                    <a href={job.url} target="_blank" rel="noreferrer" className="tile-project-logo-link" title="Visit Project Website">
+                      <img 
+                        src={`${import.meta.env.BASE_URL}${job.logo}`} 
+                        alt={`${job.role} project logo`} 
+                        className="tile-project-logo" 
+                      />
+                    </a>
+                  )}
+                  
+                  <div className="tile-text-container">
+                    <div className="tile-header-row">
+                      <div className="tile-title-group">
+                        <h3>{job.role}</h3>
+                        <a href={job.url} target="_blank" rel="noreferrer" className="project-external-link">
+                          Visit Project Site <ExternalLink size={12} style={{ marginLeft: "4px" }} />
+                        </a>
+                      </div>
+                      <span className="tile-date-label">{job.date}</span>
+                    </div>
+                    <p className="tile-institution-sub">{job.company}</p>
+                    <p className="tile-description-body">{job.details}</p>
+                  </div>
                 </div>
-                <p className="tile-institution-sub">{job.company}</p>
-                <p className="tile-description-body">{job.details}</p>
               </article>
             ))}
           </div>
