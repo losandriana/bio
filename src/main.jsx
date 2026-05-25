@@ -13,14 +13,14 @@ import {
   Code2,
   Award,
   ExternalLink,
-  Download 
+  Download
 } from "lucide-react";
 
 import "./styles.css";
 
 const navItems = [
   { id: "home", label: "/home", icon: Home },
-  { id: "experience", label: "/experience", icon: briefcaseBusiness || BriefcaseBusiness }, // Fallback protection
+  { id: "experience", label: "/experience", icon: BriefcaseBusiness },
   { id: "projects", label: "/projects", icon: Folder },
   { id: "education", label: "/education", icon: GraduationCap },
   { id: "skills", label: "/skills", icon: Code2 },
@@ -126,16 +126,18 @@ function NetworkBackground() {
     const connectDistance = 140;
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
     };
 
     const initPoints = () => {
       points = [];
       for (let i = 0; i < maxPoints; i++) {
         points.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
           vx: (Math.random() - 0.5) * 0.35,
           vy: (Math.random() - 0.5) * 0.35,
           radius: Math.random() * 1.5 + 1
@@ -144,6 +146,7 @@ function NetworkBackground() {
     };
 
     const draw = () => {
+      if (!canvas || !ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       for (let i = 0; i < points.length; i++) {
@@ -279,7 +282,6 @@ function App() {
                 <Mail size={18} />
               </a>
 
-              {/* CV download circular action button placed right next to email */}
               <a 
                 href={`${import.meta.env.BASE_URL}cv.pdf`} 
                 download="Andriana_Christopoulou_CV.pdf"
