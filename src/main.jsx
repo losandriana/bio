@@ -17,7 +17,6 @@ import {
 
 import "./styles.css";
 
-// FIXED: Removed the "/about" item from the nav list
 const navItems = [
   { id: "home", label: "/home", icon: Home },
   { id: "experience", label: "/experience", icon: BriefcaseBusiness },
@@ -196,7 +195,7 @@ function App() {
     <div className="portfolio-site">
       <NetworkBackground />
       
-      {/* Structural Left Sidebar Layout */}
+      {/* Left Sidebar Layout */}
       <aside className="left-sidebar-nav">
         <div className="sidebar-stacked-brand">
           <img 
@@ -232,10 +231,9 @@ function App() {
       {/* Main Stream Pane */}
       <main className="content-stream">
         
-        {/* Clean Static Headline Hero Block */}
         <section className="hero-section" id="home">
         
-          {/* LEFT SIDE (Now holds your header and the new introduction narrative) */}
+          {/* LEFT SIDE */}
           <div className="hero-text-content">
             <h1 className="static-name-heading">
               Andriana<br />Christopoulou
@@ -245,7 +243,6 @@ function App() {
               Networks & IoT Engineer <span>•</span> Robotics Specialist
             </p>
 
-            {/* NEW: Introduction summary added right into the empty layout gap */}
             <p className="hero-narrative-bio">
               I am a Ph.D. Candidate and Associate Researcher focused on edge intelligence, 
               distributed middleware infrastructures, and resilient wireless networks. My research 
