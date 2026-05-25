@@ -4,12 +4,7 @@ import { createRoot } from "react-dom/client";
 import {
   Github,
   Mail,
-  MapPin,
   ScrollText,
-  Globe2,
-  Clock3,
-  Download,
-  FileText,
   Layers,
   Home,
   BriefcaseBusiness,
@@ -17,7 +12,6 @@ import {
   GraduationCap,
   Code2,
   Award,
-  Wrench,
   User
 } from "lucide-react";
 
@@ -115,8 +109,6 @@ function handleScroll(id) {
 }
 
 function App() {
-  const cvPath = `${import.meta.env.BASE_URL}cv.pdf`;
-
   return (
     <div className="portfolio-site">
       
@@ -183,7 +175,8 @@ function App() {
                 <Github size={16} />
               </a>
         
-              <a href="https://scholar.google.gr/citations?user=C200MOOAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar">
+              {/* FIXED: Scholar path typo resolved here */}
+              <a href="https://scholar.google.gr/citations?user=C20oMOQAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar">
                 <ScrollText size={16} />
               </a>
         
