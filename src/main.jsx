@@ -123,7 +123,11 @@ function App() {
       {/* Structural Left Sidebar Layout */}
       <aside className="left-sidebar-nav">
         <div className="sidebar-stacked-brand">
-          <img src="/bio-page-logo.png" alt="Andriana Christopoulou Logo" className="sidebar-logo" />
+          <img 
+            src={`${import.meta.env.BASE_URL}bio-page-logo.png`} 
+            alt="Andriana Christopoulou Logo" 
+            className="sidebar-logo" 
+          />
         </div>
         
         <nav className="sidebar-links-list">
