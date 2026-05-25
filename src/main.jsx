@@ -76,7 +76,7 @@ const educationHistory = [
 
 const skillsInventory = [
   { category: "Languages", items: ["Python", "C", "C++", "Java", "SQL", "PHP", "JavaScript"] },
-  { category: "Networks & IoT", items: ["LoRaWAN", "MQTT", "Kafka", "FIWARE", "Docker", "Edge Computing", "Postman"] },
+  { category: "Networks & IoT", items: ["LoRaWAN", "MQTT", "Kafka", "FIWARE", "Docker", "Edge Computing", "Postman", "Node-Red"] },
   { category: "Robotics & Simulation", items: ["ROS1", "ROS2", "NS-3", "Android Studio", "Gazebo"] },
   { category: "Databases & Analytics", items: ["MySQL", "PostgreSQL", "MongoDB", "InfluxDB", "MATLAB", "SPSS"] }
 ];
