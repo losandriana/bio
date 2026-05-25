@@ -155,53 +155,95 @@ function App() {
         
         {/* Clean Static Headline Hero Block */}
         <section className="hero-section" id="home">
+        
+          {/* LEFT SIDE */}
           <div className="hero-text-content">
             <h1 className="static-name-heading">
               Andriana<br />Christopoulou
             </h1>
+        
             <p className="static-role-subline">
               Networks & IoT Engineer <span>•</span> Robotics Specialist
             </p>
+        
             <div className="hero-cta-row">
-              <button className="cta-primary-btn" onClick={() => handleScroll("contact")}>
+              <button
+                className="cta-primary-btn"
+                onClick={() => handleScroll("contact")}
+              >
                 Contact Me
               </button>
             </div>
-            
+        
             <div className="social-icon-circles">
-              <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub"><Github size={16} /></a>
-              <a href="https://scholar.google.gr/citations?user=C200MOOAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar"><ScrollText size={16} /></a>
-              <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub"><Layers size={16} /></a>
-              <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email"><Mail size={16} /></a>
+              <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub">
+                <Github size={16} />
+              </a>
+        
+              <a href="https://scholar.google.gr/citations?user=C200MOOAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar">
+                <ScrollText size={16} />
+              </a>
+        
+              <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub">
+                <Layers size={16} />
+              </a>
+        
+              <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email">
+                <Mail size={16} />
+              </a>
             </div>
           </div>
-        </section>
-
-        {/* Section 2: About Me */}
-        <section className="about-section" id="about">
-          <h2 className="section-title-line">About Me</h2>
-          <p className="detailed-narrative">
-            As a Ph.D. Candidate at the University of Thessaly, my research focus addresses Edge Intelligence and Resilient Wireless Networking. I design scalable distributed containerized middleware communication engines to allow robust, low-latency execution and real-time responsiveness across autonomous IoT domains.
-          </p>
-          <div className="quick-specs-grid">
-            <span><MapPin size={14} /> Lamia/Larissa, Greece</span>
-            <span><Mail size={14} /> <a href="mailto:anchristopoulou@uth.gr" className="inline-email-link">anchristopoulou@uth.gr</a></span>
-            <span><Globe2 size={14} /> Available Worldwide</span>
-            <span><Clock3 size={14} /> EEST / UTC+2</span>
-          </div>
-
-          <a href={cvPath} download="CV_Christopoulou_Andriana.pdf" className="cv-download-banner">
-            <div className="banner-left">
-              <FileText size={18} className="banner-icon" />
-              <div className="banner-text">
-                <span className="banner-title">CV</span>
-                <span className="banner-subtitle">Click to view or download full English CV</span>
+        
+          {/* RIGHT SIDE */}
+          <div className="hero-side-panel">
+        
+            <div className="hero-focus-card">
+              <span className="mini-card-label">Researching</span>
+        
+              <ul>
+                <li>→ Edge Intelligence</li>
+                <li>→ Network optimization & resilience</li>
+                <li>→ Robotics & network middleware</li>
+              </ul>
+            </div>
+        
+            <div className="hero-mini-grid">
+        
+              <div className="mini-stat-card">
+                <span className="mini-card-label">FOCUS</span>
+        
+                <div className="focus-tags">
+                  <span>IoT Systems</span>
+                  <span>Distributed Middleware</span>
+                  <span>Edge AI</span>
+                  <span>Wireless Networks</span>
+                </div>
               </div>
+        
+              <div className="mini-stat-card">
+                <span className="mini-card-label">STATS</span>
+        
+                <div className="stats-list">
+                  <div>
+                    <strong>4</strong>
+                    <span>Publications</span>
+                  </div>
+        
+                  <div>
+                    <strong>2</strong>
+                    <span>Research Roles</span>
+                  </div>
+        
+                  <div>
+                    <strong>10+</strong>
+                    <span>IoT Deployments</span>
+                  </div>
+                </div>
+              </div>
+        
             </div>
-            <div className="banner-right">
-              <Download size={16} />
-            </div>
-          </a>
+          </div>
+        
         </section>
 
         {/* Section 3: Experience */}
