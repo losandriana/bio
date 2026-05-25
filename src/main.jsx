@@ -12,14 +12,15 @@ import {
   GraduationCap,
   Code2,
   Award,
-  ExternalLink
+  ExternalLink,
+  Download 
 } from "lucide-react";
 
 import "./styles.css";
 
 const navItems = [
   { id: "home", label: "/home", icon: Home },
-  { id: "experience", label: "/experience", icon: BriefcaseBusiness },
+  { id: "experience", label: "/experience", icon: briefcaseBusiness || BriefcaseBusiness }, // Fallback protection
   { id: "projects", label: "/projects", icon: Folder },
   { id: "education", label: "/education", icon: GraduationCap },
   { id: "skills", label: "/skills", icon: Code2 },
@@ -75,7 +76,7 @@ const educationHistory = [
 
 const skillsInventory = [
   { category: "Languages", items: ["Python", "C", "C++", "Java", "SQL", "PHP", "JavaScript"] },
-  { category: "Networks & IoT", items: ["LoRaWAN", "MQTT", "Kafka", "FIWARE", "Docker", "Edge Computing", "Postman", "Node-Red"] },
+  { category: "Networks & IoT", items: ["LoRaWAN", "MQTT", "Kafka", "FIWARE", "Docker", "Edge Computing", "Postman"] },
   { category: "Robotics & Simulation", items: ["ROS1", "ROS2", "NS-3", "Android Studio", "Gazebo"] },
   { category: "Databases & Analytics", items: ["MySQL", "PostgreSQL", "MongoDB", "InfluxDB", "MATLAB", "SPSS"] }
 ];
@@ -231,6 +232,7 @@ function App() {
       {/* Main Stream Pane */}
       <main className="content-stream">
         
+        {/* Static Headline Hero Block */}
         <section className="hero-section" id="home">
         
           {/* LEFT SIDE */}
@@ -275,6 +277,16 @@ function App() {
         
               <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email">
                 <Mail size={18} />
+              </a>
+
+              {/* CV download circular action button placed right next to email */}
+              <a 
+                href={`${import.meta.env.BASE_URL}cv.pdf`} 
+                download="Andriana_Christopoulou_CV.pdf"
+                className="cv-download-circle-btn" 
+                title="Download Curriculum Vitae (PDF)"
+              >
+                <Download size={18} />
               </a>
             </div>
           </div>
