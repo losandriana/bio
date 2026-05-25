@@ -123,8 +123,7 @@ function App() {
       {/* Structural Left Sidebar Layout */}
       <aside className="left-sidebar-nav">
         <div className="sidebar-stacked-brand">
-          <span className="first-name-row">Andriana</span>
-          <span className="last-name-row">Christopoulou</span>
+          <img src="/bio-page-logo.png" alt="Andriana Christopoulou Logo" className="sidebar-logo" />
         </div>
         
         <nav className="sidebar-links-list">
