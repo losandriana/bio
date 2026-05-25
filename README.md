@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio repository! This project showcases my academic journey, technical expertise, and active research footprints in next-generation network architectures, distributed systems, and robotics.
 
-🔗 **Live Portfolio Site:** [(https://losandriana.github.io/bio/)]
+🔗 **Live Portfolio Site:** https://losandriana.github.io/bio/
 
 ---
 
