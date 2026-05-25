@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
 
 import {
@@ -108,9 +108,93 @@ function handleScroll(id) {
   }
 }
 
+/* High-performance HTML5 canvas mesh network animation background */
+function NetworkBackground() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    
+    let animationFrameId;
+    let points = [];
+    const maxPoints = 55;
+    const connectDistance = 140;
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    const initPoints = () => {
+      points = [];
+      for (let i = 0; i < maxPoints; i++) {
+        points.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          radius: Math.random() * 1.5 + 1
+        });
+      }
+    };
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Update & render wire nodes
+      for (let i = 0; i < points.length; i++) {
+        const p = points[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Bounce back smoothly from edges
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(59, 226, 164, 0.25)";
+        ctx.fill();
+
+        // Calculate and draw interconnected grid links
+        for (let j = i + 1; j < points.length; j++) {
+          const p2 = points[j];
+          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+
+          if (dist < connectDistance) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            const alpha = (1 - dist / connectDistance) * 0.12;
+            ctx.strokeStyle = `rgba(59, 226, 164, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+      animationFrameId = requestAnimationFrame(draw);
+    };
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+    initPoints();
+    draw();
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="network-animated-bg" />;
+}
+
 function App() {
   return (
     <div className="portfolio-site">
+      <NetworkBackground />
       
       {/* Structural Left Sidebar Layout */}
       <aside className="left-sidebar-nav">
@@ -172,20 +256,19 @@ function App() {
         
             <div className="social-icon-circles">
               <a href="https://github.com/losandriana" target="_blank" rel="noreferrer" title="GitHub">
-                <Github size={16} />
+                <Github size={18} />
               </a>
         
-              {/* FIXED: Scholar path typo resolved here */}
               <a href="https://scholar.google.gr/citations?user=C20oMOQAAAAJ&hl=el" target="_blank" rel="noreferrer" title="Google Scholar">
-                <ScrollText size={16} />
+                <ScrollText size={18} />
               </a>
         
               <a href="https://hub.docker.com/u/losandriana" target="_blank" rel="noreferrer" title="Docker Hub">
-                <Layers size={16} />
+                <Layers size={18} />
               </a>
         
               <a href="mailto:andrianachristopoulou02@gmail.com" title="Personal Email">
-                <Mail size={16} />
+                <Mail size={18} />
               </a>
             </div>
           </div>
@@ -267,7 +350,7 @@ function App() {
               <article className="info-display-card" key={idx}>
                 <div className="card-top-row">
                   <h3>{proj.title}</h3>
-                  <a href={proj.link} target="_blank" rel="noreferrer" className="card-git-link" title="Source Files"><Github size={14} /></a>
+                  <a href={proj.link} target="_blank" rel="noreferrer" className="card-git-link" title="Source Files"><Github size={16} /></a>
                 </div>
                 <span className="card-tag-meta">{proj.meta}</span>
                 <p>{proj.body}</p>
